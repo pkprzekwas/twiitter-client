@@ -1,12 +1,12 @@
-SHELL		:= /bin/bash
+SHELL	    := /bin/bash
 
 VENV_DIR    := ./.venv
 VENV_BIN    := $(VENV_DIR)/bin
-PYTHONPATH	:= $$PYTHONPATH:$(shell pwd)
+PYTHONPATH  := $$PYTHONPATH:$(shell pwd)
 
 PY_BASE	    := /usr/bin/python3.6
-PY	    	:= PYTHONPATH=$(PYTHONPATH) $(VENV_BIN)/python
-PIP	    	:= $(VENV_BIN)/pip
+PY	    := PYTHONPATH=$(PYTHONPATH) $(VENV_BIN)/python
+PIP	    := $(VENV_BIN)/pip
 VAULT	    := $(VENV_BIN)/ansible-vault
 
 venv-create:
