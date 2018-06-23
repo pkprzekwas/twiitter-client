@@ -4,7 +4,7 @@ from src.config.logger import logger
 from src.config.core import Config
 from src.sinks import KafkaSink
 from src.twitter.core import TwitterApi, TwitterStream
-from src.twitter.filters import world_cup_filters as wcf
+from src.twitter.filters import filters
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     kafka_sink = KafkaSink(topic=config.sink.kafka.topic, producer=kafka_producer)
 
     logger.info('Running...')
-    stream = TwitterStream.build(api=api, filters=wcf, sink=kafka_sink)
+    stream = TwitterStream.build(api=api, filters=filters, sink=kafka_sink)
     stream.run()
 
 
