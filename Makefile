@@ -4,7 +4,7 @@ VENV_DIR    := ./.venv
 VENV_BIN    := $(VENV_DIR)/bin
 PYTHONPATH  := $$PYTHONPATH:$(shell pwd)
 
-PY_BASE	    := /usr/bin/python3.6
+PY_BASE	    := $(shell which python)
 PY	    := PYTHONPATH=$(PYTHONPATH) $(VENV_BIN)/python
 PIP	    := $(VENV_BIN)/pip
 VAULT	    := $(VENV_BIN)/ansible-vault
